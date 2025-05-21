@@ -1,0 +1,1202 @@
+[
+  {
+    "table_name": "b2s_meta_acquisition_demo_breakdown_by_date_report",
+    "columns": [
+      {
+        "column_name": "date",
+        "data_type": "TIMESTAMP",
+        "mode": "NULLABLE",
+        "description": "When the data was recorded"
+      },
+      {
+        "column_name": "advertising_account_name",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "advertising_account_id",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "advertising_channel",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "campaign_name",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "campaign_id",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "campaign_delivery",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "adset_name",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "adset_id",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "adset_delivery",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "ad_name",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "ad_id",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "ad_delivery",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "client_name",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "client_offer",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "spend",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "impressions",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "reach",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "clicks",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "raw_clicks",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "unique_outbound_clicks",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "conversions",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "leads",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "registrations",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "conversion_value",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "rep_name",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "age",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "Age demographic targeting"
+      },
+      {
+        "column_name": "gender",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "Gender demographic targeting"
+      },
+      {
+        "column_name": "media_buyer",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "Person responsible for the campaign"
+      },
+      {
+        "column_name": "active",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      }
+    ]
+  },
+  {
+    "table_name": "b2s_meta_acquisition_tech_breakdown_by_date_report",
+    "columns": [
+      {
+        "column_name": "date",
+        "data_type": "TIMESTAMP",
+        "mode": "NULLABLE",
+        "description": "When the data was recorded"
+      },
+      {
+        "column_name": "advertising_account_name",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "advertising_account_id",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "advertising_channel",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "campaign_name",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "campaign_id",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "campaign_delivery",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "adset_name",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "adset_id",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "adset_delivery",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "ad_name",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "ad_id",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "ad_delivery",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "client_name",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "client_offer",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "spend",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "impressions",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "reach",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "clicks",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "raw_clicks",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "unique_outbound_clicks",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "conversions",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "leads",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "registrations",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "conversion_value",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "rep_name",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "impression_device",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "Device type (mobile, desktop, etc.)"
+      },
+      {
+        "column_name": "platform_name",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "Platform where ads were shown"
+      },
+      {
+        "column_name": "platform_position",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "Where on the platform the ads appeared"
+      },
+      {
+        "column_name": "media_buyer",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "Person responsible for the campaign"
+      },
+      {
+        "column_name": "active",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      }
+    ]
+  },
+  {
+    "table_name": "client_offer_compare_table",
+    "columns": [
+      {
+        "column_name": "client_name",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "client_offer",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "ad_network",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "account_name",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "account_id",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "campaign_name",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "campaign_id",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "adset_name",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "adset_id",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "ad_name",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "ad_id",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "media_buyer",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "Person responsible for the campaign"
+      },
+      {
+        "column_name": "rep",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "color",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "target",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "date_range_3_1",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "Various date ranges for comparison"
+      },
+      {
+        "column_name": "date_range_3_2",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "Various date ranges for comparison"
+      },
+      {
+        "column_name": "date_range_3_3",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "Various date ranges for comparison"
+      },
+      {
+        "column_name": "date_range_7_1",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "Various date ranges for comparison"
+      },
+      {
+        "column_name": "date_range_7_2",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "Various date ranges for comparison"
+      },
+      {
+        "column_name": "date_range_7_3",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "Various date ranges for comparison"
+      },
+      {
+        "column_name": "date_range_30_1",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "Various date ranges for comparison"
+      },
+      {
+        "column_name": "date_range_30_3",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "Various date ranges for comparison"
+      },
+      {
+        "column_name": "date_range_30_2",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "Various date ranges for comparison"
+      },
+      {
+        "column_name": "l3_total_spend",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "Spend for comparative time periods"
+      },
+      {
+        "column_name": "xl3_total_spend",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "Spend for comparative time periods"
+      },
+      {
+        "column_name": "xxl3_total_spend",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "Spend for comparative time periods"
+      },
+      {
+        "column_name": "l7_total_spend",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "Spend for comparative time periods"
+      },
+      {
+        "column_name": "xl7_total_spend",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "Spend for comparative time periods"
+      },
+      {
+        "column_name": "xxl7_total_spend",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "Spend for comparative time periods"
+      },
+      {
+        "column_name": "l30_total_spend",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "Spend for comparative time periods"
+      },
+      {
+        "column_name": "xl30_total_spend",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "Spend for comparative time periods"
+      },
+      {
+        "column_name": "xxl30_total_spend",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "Spend for comparative time periods"
+      },
+      {
+        "column_name": "l3_total_impressions",
+        "data_type": "INTEGER",
+        "mode": "NULLABLE",
+        "description": "Impressions for comparative time periods"
+      },
+      {
+        "column_name": "xl3_total_impressions",
+        "data_type": "INTEGER",
+        "mode": "NULLABLE",
+        "description": "Impressions for comparative time periods"
+      },
+      {
+        "column_name": "xxl3_total_impressions",
+        "data_type": "INTEGER",
+        "mode": "NULLABLE",
+        "description": "Impressions for comparative time periods"
+      },
+      {
+        "column_name": "l7_total_impressions",
+        "data_type": "INTEGER",
+        "mode": "NULLABLE",
+        "description": "Impressions for comparative time periods"
+      },
+      {
+        "column_name": "xl7_total_impressions",
+        "data_type": "INTEGER",
+        "mode": "NULLABLE",
+        "description": "Impressions for comparative time periods"
+      },
+      {
+        "column_name": "xxl7_total_impressions",
+        "data_type": "INTEGER",
+        "mode": "NULLABLE",
+        "description": "Impressions for comparative time periods"
+      },
+      {
+        "column_name": "l30_total_impressions",
+        "data_type": "INTEGER",
+        "mode": "NULLABLE",
+        "description": "Impressions for comparative time periods"
+      },
+      {
+        "column_name": "xl30_total_impressions",
+        "data_type": "INTEGER",
+        "mode": "NULLABLE",
+        "description": "Impressions for comparative time periods"
+      },
+      {
+        "column_name": "xxl30_total_impressions",
+        "data_type": "INTEGER",
+        "mode": "NULLABLE",
+        "description": "Impressions for comparative time periods"
+      },
+      {
+        "column_name": "l3_total_clicks",
+        "data_type": "INTEGER",
+        "mode": "NULLABLE",
+        "description": "Clicks for comparative time periods"
+      },
+      {
+        "column_name": "xl3_total_clicks",
+        "data_type": "INTEGER",
+        "mode": "NULLABLE",
+        "description": "Clicks for comparative time periods"
+      },
+      {
+        "column_name": "xxl3_total_clicks",
+        "data_type": "INTEGER",
+        "mode": "NULLABLE",
+        "description": "Clicks for comparative time periods"
+      },
+      {
+        "column_name": "l7_total_clicks",
+        "data_type": "INTEGER",
+        "mode": "NULLABLE",
+        "description": "Clicks for comparative time periods"
+      },
+      {
+        "column_name": "xl7_total_clicks",
+        "data_type": "INTEGER",
+        "mode": "NULLABLE",
+        "description": "Clicks for comparative time periods"
+      },
+      {
+        "column_name": "xxl7_total_clicks",
+        "data_type": "INTEGER",
+        "mode": "NULLABLE",
+        "description": "Clicks for comparative time periods"
+      },
+      {
+        "column_name": "l30_total_clicks",
+        "data_type": "INTEGER",
+        "mode": "NULLABLE",
+        "description": "Clicks for comparative time periods"
+      },
+      {
+        "column_name": "xl30_total_clicks",
+        "data_type": "INTEGER",
+        "mode": "NULLABLE",
+        "description": "Clicks for comparative time periods"
+      },
+      {
+        "column_name": "xxl30_total_clicks",
+        "data_type": "INTEGER",
+        "mode": "NULLABLE",
+        "description": "Clicks for comparative time periods"
+      },
+      {
+        "column_name": "l3_total_conversions",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "Conversions for comparative time periods"
+      },
+      {
+        "column_name": "xl3_total_conversions",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "Conversions for comparative time periods"
+      },
+      {
+        "column_name": "xxl3_total_conversions",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "Conversions for comparative time periods"
+      },
+      {
+        "column_name": "l7_total_conversions",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "Conversions for comparative time periods"
+      },
+      {
+        "column_name": "xl7_total_conversions",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "Conversions for comparative time periods"
+      },
+      {
+        "column_name": "xxl7_total_conversions",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "Conversions for comparative time periods"
+      },
+      {
+        "column_name": "l30_total_conversions",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "Conversions for comparative time periods"
+      },
+      {
+        "column_name": "xl30_total_conversions",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "Conversions for comparative time periods"
+      },
+      {
+        "column_name": "xxl30_total_conversions",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "Conversions for comparative time periods"
+      },
+      {
+        "column_name": "l3_total_conv_value",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "Conversion value for comparative time periods"
+      },
+      {
+        "column_name": "xl3_total_conv_value",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "Conversion value for comparative time periods"
+      },
+      {
+        "column_name": "xxl3_total_conv_value",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "Conversion value for comparative time periods"
+      },
+      {
+        "column_name": "l7_total_conv_value",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "Conversion value for comparative time periods"
+      },
+      {
+        "column_name": "xl7_total_conv_value",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "Conversion value for comparative time periods"
+      },
+      {
+        "column_name": "xxl7_total_conv_value",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "Conversion value for comparative time periods"
+      },
+      {
+        "column_name": "l30_total_conv_value",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "Conversion value for comparative time periods"
+      },
+      {
+        "column_name": "xl30_total_conv_value",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "Conversion value for comparative time periods"
+      },
+      {
+        "column_name": "xxl30_total_conv_value",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "Conversion value for comparative time periods"
+      },
+      {
+        "column_name": "date_range_yesterday",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "Previous day's metrics"
+      },
+      {
+        "column_name": "yesterday_total_spend",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "Previous day's metrics"
+      },
+      {
+        "column_name": "yesterday_total_impressions",
+        "data_type": "INTEGER",
+        "mode": "NULLABLE",
+        "description": "Previous day's metrics"
+      },
+      {
+        "column_name": "yesterday_total_clicks",
+        "data_type": "INTEGER",
+        "mode": "NULLABLE",
+        "description": "Previous day's metrics"
+      },
+      {
+        "column_name": "yesterday_total_conversions",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "Previous day's metrics"
+      },
+      {
+        "column_name": "yesterday_total_conv_value",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "Previous day's metrics"
+      }
+    ]
+  },
+  {
+    "table_name": "built2scale.b2sreporting.client_offer_monitor_table",
+    "columns": [
+      {
+        "column_name": "client_name",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "client_offer",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "ad_network",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "account_name",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "account_id",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "media_buyer",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "Person responsible for the campaign"
+      },
+      {
+        "column_name": "rep",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "color",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "Likely for visualization and goal tracking (color)"
+      },
+      {
+        "column_name": "target",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "Likely for visualization and goal tracking (target)"
+      },
+      {
+        "column_name": "l3_total_spend",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "Time-based metric for 3-day period (spend)"
+      },
+      {
+        "column_name": "l7_total_spend",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "Time-based metric for 7-day period (spend)"
+      },
+      {
+        "column_name": "l14_total_spend",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "Time-based metric for 14-day period (spend)"
+      },
+      {
+        "column_name": "l30_total_spend",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "Time-based metric for 30-day period (spend)"
+      },
+      {
+        "column_name": "l3_total_conversions",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "Time-based metric for 3-day period (conversions)"
+      },
+      {
+        "column_name": "l7_total_conversions",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "Time-based metric for 7-day period (conversions)"
+      },
+      {
+        "column_name": "l14_total_conversions",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "Time-based metric for 14-day period (conversions)"
+      },
+      {
+        "column_name": "l30_total_conversions",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "Time-based metric for 30-day period (conversions)"
+      }
+    ]
+  },
+  {
+    "table_name": "media_buyers_table",
+    "columns": [
+      {
+        "column_name": "client_name",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "Associated client information (name)"
+      },
+      {
+        "column_name": "client_offer",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "Associated client information (offer)"
+      },
+      {
+        "column_name": "campaign_name",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "Campaign identifier (name)"
+      },
+      {
+        "column_name": "campaign_id",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "Campaign identifier (ID)"
+      },
+      {
+        "column_name": "media_buyer",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "Person managing the campaigns"
+      },
+      {
+        "column_name": "l3_total_spend",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "l7_total_spend",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "l14_total_spend",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "l30_total_spend",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "rep",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "l3_total_conversions",
+        "data_type": "INTEGER",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "l7_total_conversions",
+        "data_type": "INTEGER",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "l14_total_conversions",
+        "data_type": "INTEGER",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "l30_total_conversions",
+        "data_type": "INTEGER",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      }
+    ]
+  },
+  {
+    "table_name": "v1_b2s_all_acquisition_production_report",
+    "columns": [
+      {
+        "column_name": "date",
+        "data_type": "TIMESTAMP",
+        "mode": "NULLABLE",
+        "description": "When the data was recorded"
+      },
+      {
+        "column_name": "advertising_account_name",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "advertising_account_id",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "advertising_channel",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "campaign_name",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "Campaign name identifier"
+      },
+      {
+        "column_name": "campaign_id",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "Campaign ID identifier"
+      },
+      {
+        "column_name": "campaign_delivery",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "adset_name",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "adset_id",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "adset_delivery",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "ad_name",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "ad_id",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "ad_delivery",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "client_name",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "Identifies the client part of client/offer pair"
+      },
+      {
+        "column_name": "client_offer",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "Identifies the offer part of client/offer pair"
+      },
+      {
+        "column_name": "spend",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "Core performance metric: spend"
+      },
+      {
+        "column_name": "impressions",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "Core performance metric: impressions"
+      },
+      {
+        "column_name": "clicks",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "Core performance metric: clicks"
+      },
+      {
+        "column_name": "conversions",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "Core performance metric: conversions"
+      },
+      {
+        "column_name": "leads",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "registrations",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "conversion_value",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "rep_name",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "media_buyer",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "Person responsible for the campaign"
+      },
+      {
+        "column_name": "active",
+        "data_type": "STRING",
+        "mode": "NULLABLE",
+        "description": "Whether the campaign is active"
+      },
+      {
+        "column_name": "reach",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "raw_clicks",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      },
+      {
+        "column_name": "unique_outbound_clicks",
+        "data_type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "No description available"
+      }
+    ]
+  }
+] 

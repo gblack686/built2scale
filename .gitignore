@@ -1,0 +1,7 @@
+built2scale-2c7cc11e1ca6.json
+*.pyc
+__pycache__/
+.DS_Store
+.env
+venv/
+*.log 
