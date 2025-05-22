@@ -1,0 +1,1229 @@
+
+<html>
+<head>
+    <title>SQL Table Designs</title>
+    <style>
+        body { font-family: sans-serif; margin: 20px; background-color: #f4f4f9; color: #333; }
+        .container { max-width: 1200px; margin: auto; background-color: #fff; padding: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h1 { color: #333; text-align: center; }
+        h2 { color: #555; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 30px; }
+        th, td { border: 1px solid #ddd; padding: 10px 12px; text-align: left; }
+        th { background-color: #e9e9f3; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        .purpose { background-color: #f0f8ff; padding: 10px; margin-bottom: 15px; border-left: 4px solid #7abaff; }
+        .grain { font-style: italic; color: #666; margin-bottom: 10px; }
+        .pk { font-weight: bold; color: #d9534f; }
+        .fk { font-style: italic; color: #5bc0de; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Proposed SQL Table Designs for Client Statistics</h1>
+<h2>Table: <code>client_daily_performance_summary</code></h2><div class='purpose'><strong>Purpose:</strong> To store daily aggregated performance metrics for each client, broken down by client offer and advertising network. This allows for daily trend analysis.</div><p class='grain'><strong>Grain:</strong> report_date, client_name, client_offer, ad_network</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Column Name</th>
+                    <th>Data Type</th>
+                    <th>Mode</th>
+                    <th>Constraints / Notes</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>report_date</td>
+                    <td>DATE</td>
+                    <td>NULLABLE</td>
+                    <td><span class='pk'>PK</span></td>
+                    <td>The date for which the summary is recorded.</td>
+                </tr>
+
+                <tr>
+                    <td>client_name</td>
+                    <td>STRING</td>
+                    <td>NULLABLE</td>
+                    <td><span class='pk'>PK</span></td>
+                    <td>Name of the client.</td>
+                </tr>
+
+                <tr>
+                    <td>client_offer</td>
+                    <td>STRING</td>
+                    <td>NULLABLE</td>
+                    <td><span class='pk'>PK</span></td>
+                    <td>Specific offer for the client (e.g., 'Product A', 'All Offers').</td>
+                </tr>
+
+                <tr>
+                    <td>ad_network</td>
+                    <td>STRING</td>
+                    <td>NULLABLE</td>
+                    <td><span class='pk'>PK</span></td>
+                    <td>Advertising network (e.g., 'Facebook/Meta', 'Google Ads').</td>
+                </tr>
+
+                <tr>
+                    <td>total_spend</td>
+                    <td>FLOAT</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Total amount spent.</td>
+                </tr>
+
+                <tr>
+                    <td>total_impressions</td>
+                    <td>INTEGER</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Total number of impressions.</td>
+                </tr>
+
+                <tr>
+                    <td>total_clicks</td>
+                    <td>INTEGER</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Total number of clicks.</td>
+                </tr>
+
+                <tr>
+                    <td>total_reach</td>
+                    <td>INTEGER</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Total unique users reached.</td>
+                </tr>
+
+                <tr>
+                    <td>total_purchases</td>
+                    <td>INTEGER</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Total number of purchase conversions.</td>
+                </tr>
+
+                <tr>
+                    <td>total_leads</td>
+                    <td>INTEGER</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Total number of lead conversions.</td>
+                </tr>
+
+                <tr>
+                    <td>total_registrations</td>
+                    <td>INTEGER</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Total number of registration conversions.</td>
+                </tr>
+
+                <tr>
+                    <td>total_conversion_value</td>
+                    <td>FLOAT</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Total monetary value from all conversions.</td>
+                </tr>
+
+                <tr>
+                    <td>roas</td>
+                    <td>FLOAT</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Return On Ad Spend (total_conversion_value / total_spend).</td>
+                </tr>
+
+                <tr>
+                    <td>cpc</td>
+                    <td>FLOAT</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Cost Per Click (total_spend / total_clicks).</td>
+                </tr>
+
+                <tr>
+                    <td>cpm</td>
+                    <td>FLOAT</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Cost Per Mille (Thousand Impressions) (total_spend / total_impressions * 1000).</td>
+                </tr>
+
+                <tr>
+                    <td>ctr</td>
+                    <td>FLOAT</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Click-Through Rate (total_clicks / total_impressions).</td>
+                </tr>
+
+                <tr>
+                    <td>cpa_purchase</td>
+                    <td>FLOAT</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Cost Per Purchase (total_spend / total_purchases).</td>
+                </tr>
+
+                <tr>
+                    <td>cpa_lead</td>
+                    <td>FLOAT</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Cost Per Lead (total_spend / total_leads).</td>
+                </tr>
+
+                <tr>
+                    <td>cpa_registration</td>
+                    <td>FLOAT</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Cost Per Registration (total_spend / total_registrations).</td>
+                </tr>
+
+                <tr>
+                    <td>frequency</td>
+                    <td>FLOAT</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Average number of times ads were shown to each unique person (total_impressions / total_reach).</td>
+                </tr>
+
+                <tr>
+                    <td>active_campaigns_count</td>
+                    <td>INTEGER</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Number of campaigns active on this day.</td>
+                </tr>
+
+                <tr>
+                    <td>active_adsets_count</td>
+                    <td>INTEGER</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Number of ad sets active on this day.</td>
+                </tr>
+
+                <tr>
+                    <td>active_ads_count</td>
+                    <td>INTEGER</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Number of ads active on this day.</td>
+                </tr>
+
+                <tr>
+                    <td>last_updated</td>
+                    <td>TIMESTAMP</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Timestamp of when the record was last updated.</td>
+                </tr>
+
+            </tbody>
+        </table>
+<p><strong>Source:</strong> Aggregated daily from v1_b2s_all_acquisition_production_report.</p><hr style='margin-top: 20px; margin-bottom: 40px; border: 0; border-top: 1px solid #ccc;'><h2>Table: <code>client_campaign_periodic_summary</code></h2><div class='purpose'><strong>Purpose:</strong> To store periodic (e.g., Last 7 Days, Last 30 Days, Month-to-Date) performance metrics for each campaign associated with a client and offer.</div><p class='grain'><strong>Grain:</strong> client_name, client_offer, campaign_id, period_type, period_start_date, period_end_date</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Column Name</th>
+                    <th>Data Type</th>
+                    <th>Mode</th>
+                    <th>Constraints / Notes</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>client_name</td>
+                    <td>STRING</td>
+                    <td>NULLABLE</td>
+                    <td><span class='pk'>PK</span></td>
+                    <td>Name of the client.</td>
+                </tr>
+
+                <tr>
+                    <td>client_offer</td>
+                    <td>STRING</td>
+                    <td>NULLABLE</td>
+                    <td><span class='pk'>PK</span></td>
+                    <td>Specific offer for the client.</td>
+                </tr>
+
+                <tr>
+                    <td>campaign_id</td>
+                    <td>STRING</td>
+                    <td>NULLABLE</td>
+                    <td><span class='pk'>PK</span></td>
+                    <td>Unique identifier for the campaign.</td>
+                </tr>
+
+                <tr>
+                    <td>period_type</td>
+                    <td>STRING</td>
+                    <td>NULLABLE</td>
+                    <td><span class='pk'>PK</span></td>
+                    <td>Type of period (e.g., 'L7D', 'L30D', 'MTD', 'Custom').</td>
+                </tr>
+
+                <tr>
+                    <td>period_start_date</td>
+                    <td>DATE</td>
+                    <td>NULLABLE</td>
+                    <td><span class='pk'>PK</span></td>
+                    <td>Start date of the summary period.</td>
+                </tr>
+
+                <tr>
+                    <td>period_end_date</td>
+                    <td>DATE</td>
+                    <td>NULLABLE</td>
+                    <td><span class='pk'>PK</span></td>
+                    <td>End date of the summary period.</td>
+                </tr>
+
+                <tr>
+                    <td>campaign_name</td>
+                    <td>STRING</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Name of the campaign.</td>
+                </tr>
+
+                <tr>
+                    <td>ad_network</td>
+                    <td>STRING</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Advertising network.</td>
+                </tr>
+
+                <tr>
+                    <td>campaign_status</td>
+                    <td>STRING</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Current status of the campaign (e.g., 'Active', 'Paused').</td>
+                </tr>
+
+                <tr>
+                    <td>total_spend</td>
+                    <td>FLOAT</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Total amount spent in the period.</td>
+                </tr>
+
+                <tr>
+                    <td>total_impressions</td>
+                    <td>INTEGER</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Total impressions in the period.</td>
+                </tr>
+
+                <tr>
+                    <td>total_clicks</td>
+                    <td>INTEGER</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Total clicks in the period.</td>
+                </tr>
+
+                <tr>
+                    <td>total_reach</td>
+                    <td>INTEGER</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Total unique users reached in the period.</td>
+                </tr>
+
+                <tr>
+                    <td>total_purchases</td>
+                    <td>INTEGER</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Total purchase conversions in the period.</td>
+                </tr>
+
+                <tr>
+                    <td>total_leads</td>
+                    <td>INTEGER</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Total lead conversions in the period.</td>
+                </tr>
+
+                <tr>
+                    <td>total_registrations</td>
+                    <td>INTEGER</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Total registration conversions in the period.</td>
+                </tr>
+
+                <tr>
+                    <td>total_conversion_value</td>
+                    <td>FLOAT</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Total monetary value from conversions in the period.</td>
+                </tr>
+
+                <tr>
+                    <td>roas</td>
+                    <td>FLOAT</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>ROAS for the period.</td>
+                </tr>
+
+                <tr>
+                    <td>cpc</td>
+                    <td>FLOAT</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>CPC for the period.</td>
+                </tr>
+
+                <tr>
+                    <td>cpm</td>
+                    <td>FLOAT</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>CPM for the period.</td>
+                </tr>
+
+                <tr>
+                    <td>ctr</td>
+                    <td>FLOAT</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>CTR for the period.</td>
+                </tr>
+
+                <tr>
+                    <td>cpa_purchase</td>
+                    <td>FLOAT</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Cost Per Purchase for the period.</td>
+                </tr>
+
+                <tr>
+                    <td>cpa_lead</td>
+                    <td>FLOAT</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Cost Per Lead for the period.</td>
+                </tr>
+
+                <tr>
+                    <td>cpa_registration</td>
+                    <td>FLOAT</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Cost Per Registration for the period.</td>
+                </tr>
+
+                <tr>
+                    <td>frequency</td>
+                    <td>FLOAT</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Average frequency for the period.</td>
+                </tr>
+
+                <tr>
+                    <td>health_score</td>
+                    <td>FLOAT</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Conceptual campaign health score if calculated.</td>
+                </tr>
+
+                <tr>
+                    <td>last_updated</td>
+                    <td>TIMESTAMP</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Timestamp of when the record was last updated.</td>
+                </tr>
+
+            </tbody>
+        </table>
+<p><strong>Source:</strong> Aggregated from v1_b2s_all_acquisition_production_report over the specified period.</p><hr style='margin-top: 20px; margin-bottom: 40px; border: 0; border-top: 1px solid #ccc;'><h2>Table: <code>client_adset_periodic_summary</code></h2><div class='purpose'><strong>Purpose:</strong> To store periodic performance metrics for each ad set within a campaign for a client and offer.</div><p class='grain'><strong>Grain:</strong> client_name, client_offer, campaign_id, adset_id, period_type, period_start_date, period_end_date</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Column Name</th>
+                    <th>Data Type</th>
+                    <th>Mode</th>
+                    <th>Constraints / Notes</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>client_name</td>
+                    <td>STRING</td>
+                    <td>NULLABLE</td>
+                    <td><span class='pk'>PK</span></td>
+                    <td>Name of the client.</td>
+                </tr>
+
+                <tr>
+                    <td>client_offer</td>
+                    <td>STRING</td>
+                    <td>NULLABLE</td>
+                    <td><span class='pk'>PK</span></td>
+                    <td>Specific offer for the client.</td>
+                </tr>
+
+                <tr>
+                    <td>campaign_id</td>
+                    <td>STRING</td>
+                    <td>NULLABLE</td>
+                    <td><span class='pk'>PK</span>, <span class='fk'>FK -&gt; client_campaign_periodic_summary.campaign_id</span></td>
+                    <td>Campaign identifier.</td>
+                </tr>
+
+                <tr>
+                    <td>adset_id</td>
+                    <td>STRING</td>
+                    <td>NULLABLE</td>
+                    <td><span class='pk'>PK</span></td>
+                    <td>Unique identifier for the ad set.</td>
+                </tr>
+
+                <tr>
+                    <td>period_type</td>
+                    <td>STRING</td>
+                    <td>NULLABLE</td>
+                    <td><span class='pk'>PK</span></td>
+                    <td>Type of period.</td>
+                </tr>
+
+                <tr>
+                    <td>period_start_date</td>
+                    <td>DATE</td>
+                    <td>NULLABLE</td>
+                    <td><span class='pk'>PK</span></td>
+                    <td>Start date of the summary period.</td>
+                </tr>
+
+                <tr>
+                    <td>period_end_date</td>
+                    <td>DATE</td>
+                    <td>NULLABLE</td>
+                    <td><span class='pk'>PK</span></td>
+                    <td>End date of the summary period.</td>
+                </tr>
+
+                <tr>
+                    <td>campaign_name</td>
+                    <td>STRING</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Name of the parent campaign.</td>
+                </tr>
+
+                <tr>
+                    <td>adset_name</td>
+                    <td>STRING</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Name of the ad set.</td>
+                </tr>
+
+                <tr>
+                    <td>ad_network</td>
+                    <td>STRING</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Advertising network.</td>
+                </tr>
+
+                <tr>
+                    <td>adset_status</td>
+                    <td>STRING</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Current status of the ad set.</td>
+                </tr>
+
+                <tr>
+                    <td>total_spend</td>
+                    <td>FLOAT</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Total amount spent in the period.</td>
+                </tr>
+
+                <tr>
+                    <td>total_impressions</td>
+                    <td>INTEGER</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Total impressions in the period.</td>
+                </tr>
+
+                <tr>
+                    <td>total_clicks</td>
+                    <td>INTEGER</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Total clicks in the period.</td>
+                </tr>
+
+                <tr>
+                    <td>total_reach</td>
+                    <td>INTEGER</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Total unique users reached in the period.</td>
+                </tr>
+
+                <tr>
+                    <td>total_purchases</td>
+                    <td>INTEGER</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Total purchase conversions in the period.</td>
+                </tr>
+
+                <tr>
+                    <td>total_leads</td>
+                    <td>INTEGER</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Total lead conversions in the period.</td>
+                </tr>
+
+                <tr>
+                    <td>total_registrations</td>
+                    <td>INTEGER</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Total registration conversions in the period.</td>
+                </tr>
+
+                <tr>
+                    <td>total_conversion_value</td>
+                    <td>FLOAT</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Total monetary value from conversions in the period.</td>
+                </tr>
+
+                <tr>
+                    <td>roas</td>
+                    <td>FLOAT</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>ROAS for the period.</td>
+                </tr>
+
+                <tr>
+                    <td>cpc</td>
+                    <td>FLOAT</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>CPC for the period.</td>
+                </tr>
+
+                <tr>
+                    <td>cpm</td>
+                    <td>FLOAT</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>CPM for the period.</td>
+                </tr>
+
+                <tr>
+                    <td>ctr</td>
+                    <td>FLOAT</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>CTR for the period.</td>
+                </tr>
+
+                <tr>
+                    <td>cpa_purchase</td>
+                    <td>FLOAT</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Cost Per Purchase for the period.</td>
+                </tr>
+
+                <tr>
+                    <td>cpa_lead</td>
+                    <td>FLOAT</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Cost Per Lead for the period.</td>
+                </tr>
+
+                <tr>
+                    <td>cpa_registration</td>
+                    <td>FLOAT</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Cost Per Registration for the period.</td>
+                </tr>
+
+                <tr>
+                    <td>frequency</td>
+                    <td>FLOAT</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Average frequency for the period.</td>
+                </tr>
+
+                <tr>
+                    <td>last_updated</td>
+                    <td>TIMESTAMP</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Timestamp of when the record was last updated.</td>
+                </tr>
+
+            </tbody>
+        </table>
+<p><strong>Source:</strong> Aggregated from v1_b2s_all_acquisition_production_report over the specified period.</p><hr style='margin-top: 20px; margin-bottom: 40px; border: 0; border-top: 1px solid #ccc;'><h2>Table: <code>client_ad_periodic_summary</code></h2><div class='purpose'><strong>Purpose:</strong> To store periodic performance metrics for each ad within an ad set for a client and offer.</div><p class='grain'><strong>Grain:</strong> client_name, client_offer, campaign_id, adset_id, ad_id, period_type, period_start_date, period_end_date</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Column Name</th>
+                    <th>Data Type</th>
+                    <th>Mode</th>
+                    <th>Constraints / Notes</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>client_name</td>
+                    <td>STRING</td>
+                    <td>NULLABLE</td>
+                    <td><span class='pk'>PK</span></td>
+                    <td>Name of the client.</td>
+                </tr>
+
+                <tr>
+                    <td>client_offer</td>
+                    <td>STRING</td>
+                    <td>NULLABLE</td>
+                    <td><span class='pk'>PK</span></td>
+                    <td>Specific offer for the client.</td>
+                </tr>
+
+                <tr>
+                    <td>campaign_id</td>
+                    <td>STRING</td>
+                    <td>NULLABLE</td>
+                    <td><span class='pk'>PK</span>, <span class='fk'>FK -&gt; client_campaign_periodic_summary.campaign_id</span></td>
+                    <td>Campaign identifier.</td>
+                </tr>
+
+                <tr>
+                    <td>adset_id</td>
+                    <td>STRING</td>
+                    <td>NULLABLE</td>
+                    <td><span class='pk'>PK</span>, <span class='fk'>FK -&gt; client_adset_periodic_summary.adset_id</span></td>
+                    <td>Ad set identifier.</td>
+                </tr>
+
+                <tr>
+                    <td>ad_id</td>
+                    <td>STRING</td>
+                    <td>NULLABLE</td>
+                    <td><span class='pk'>PK</span></td>
+                    <td>Unique identifier for the ad.</td>
+                </tr>
+
+                <tr>
+                    <td>period_type</td>
+                    <td>STRING</td>
+                    <td>NULLABLE</td>
+                    <td><span class='pk'>PK</span></td>
+                    <td>Type of period.</td>
+                </tr>
+
+                <tr>
+                    <td>period_start_date</td>
+                    <td>DATE</td>
+                    <td>NULLABLE</td>
+                    <td><span class='pk'>PK</span></td>
+                    <td>Start date of the summary period.</td>
+                </tr>
+
+                <tr>
+                    <td>period_end_date</td>
+                    <td>DATE</td>
+                    <td>NULLABLE</td>
+                    <td><span class='pk'>PK</span></td>
+                    <td>End date of the summary period.</td>
+                </tr>
+
+                <tr>
+                    <td>campaign_name</td>
+                    <td>STRING</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Name of the parent campaign.</td>
+                </tr>
+
+                <tr>
+                    <td>adset_name</td>
+                    <td>STRING</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Name of the parent ad set.</td>
+                </tr>
+
+                <tr>
+                    <td>ad_name</td>
+                    <td>STRING</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Name of the ad.</td>
+                </tr>
+
+                <tr>
+                    <td>ad_network</td>
+                    <td>STRING</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Advertising network.</td>
+                </tr>
+
+                <tr>
+                    <td>ad_status</td>
+                    <td>STRING</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Current status of the ad.</td>
+                </tr>
+
+                <tr>
+                    <td>total_spend</td>
+                    <td>FLOAT</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Total amount spent in the period.</td>
+                </tr>
+
+                <tr>
+                    <td>total_impressions</td>
+                    <td>INTEGER</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Total impressions in the period.</td>
+                </tr>
+
+                <tr>
+                    <td>total_clicks</td>
+                    <td>INTEGER</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Total clicks in the period.</td>
+                </tr>
+
+                <tr>
+                    <td>total_reach</td>
+                    <td>INTEGER</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Total unique users reached in the period.</td>
+                </tr>
+
+                <tr>
+                    <td>total_purchases</td>
+                    <td>INTEGER</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Total purchase conversions in the period.</td>
+                </tr>
+
+                <tr>
+                    <td>total_leads</td>
+                    <td>INTEGER</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Total lead conversions in the period.</td>
+                </tr>
+
+                <tr>
+                    <td>total_registrations</td>
+                    <td>INTEGER</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Total registration conversions in the period.</td>
+                </tr>
+
+                <tr>
+                    <td>total_conversion_value</td>
+                    <td>FLOAT</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Total monetary value from conversions in the period.</td>
+                </tr>
+
+                <tr>
+                    <td>roas</td>
+                    <td>FLOAT</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>ROAS for the period.</td>
+                </tr>
+
+                <tr>
+                    <td>cpc</td>
+                    <td>FLOAT</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>CPC for the period.</td>
+                </tr>
+
+                <tr>
+                    <td>cpm</td>
+                    <td>FLOAT</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>CPM for the period.</td>
+                </tr>
+
+                <tr>
+                    <td>ctr</td>
+                    <td>FLOAT</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>CTR for the period.</td>
+                </tr>
+
+                <tr>
+                    <td>cpa_purchase</td>
+                    <td>FLOAT</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Cost Per Purchase for the period.</td>
+                </tr>
+
+                <tr>
+                    <td>cpa_lead</td>
+                    <td>FLOAT</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Cost Per Lead for the period.</td>
+                </tr>
+
+                <tr>
+                    <td>cpa_registration</td>
+                    <td>FLOAT</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Cost Per Registration for the period.</td>
+                </tr>
+
+                <tr>
+                    <td>frequency</td>
+                    <td>FLOAT</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Average frequency for the period.</td>
+                </tr>
+
+                <tr>
+                    <td>last_updated</td>
+                    <td>TIMESTAMP</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Timestamp of when the record was last updated.</td>
+                </tr>
+
+            </tbody>
+        </table>
+<p><strong>Source:</strong> Aggregated from v1_b2s_all_acquisition_production_report over the specified period.</p><hr style='margin-top: 20px; margin-bottom: 40px; border: 0; border-top: 1px solid #ccc;'><h2>Table: <code>client_overall_snapshot</code></h2><div class='purpose'><strong>Purpose:</strong> Provides a high-level snapshot of performance for each client and offer over standard reporting periods (e.g., L7D, L30D, MTD). This is useful for dashboards and executive summaries.</div><p class='grain'><strong>Grain:</strong> client_name, client_offer, period_type</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Column Name</th>
+                    <th>Data Type</th>
+                    <th>Mode</th>
+                    <th>Constraints / Notes</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>client_name</td>
+                    <td>STRING</td>
+                    <td>NULLABLE</td>
+                    <td><span class='pk'>PK</span></td>
+                    <td>Name of the client.</td>
+                </tr>
+
+                <tr>
+                    <td>client_offer</td>
+                    <td>STRING</td>
+                    <td>NULLABLE</td>
+                    <td><span class='pk'>PK</span></td>
+                    <td>Specific offer (or 'All Offers').</td>
+                </tr>
+
+                <tr>
+                    <td>period_type</td>
+                    <td>STRING</td>
+                    <td>NULLABLE</td>
+                    <td><span class='pk'>PK</span></td>
+                    <td>The period this snapshot represents (e.g., 'L7D', 'L30D', 'MTD', 'LastMonth').</td>
+                </tr>
+
+                <tr>
+                    <td>period_start_date</td>
+                    <td>DATE</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Start date of the snapshot period.</td>
+                </tr>
+
+                <tr>
+                    <td>period_end_date</td>
+                    <td>DATE</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>End date of the snapshot period.</td>
+                </tr>
+
+                <tr>
+                    <td>ad_network</td>
+                    <td>STRING</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Advertising network.</td>
+                </tr>
+
+                <tr>
+                    <td>total_spend</td>
+                    <td>FLOAT</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Total amount spent in the period.</td>
+                </tr>
+
+                <tr>
+                    <td>total_impressions</td>
+                    <td>INTEGER</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Total impressions in the period.</td>
+                </tr>
+
+                <tr>
+                    <td>total_clicks</td>
+                    <td>INTEGER</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Total clicks in the period.</td>
+                </tr>
+
+                <tr>
+                    <td>total_reach</td>
+                    <td>INTEGER</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Total unique users reached in the period.</td>
+                </tr>
+
+                <tr>
+                    <td>total_purchases</td>
+                    <td>INTEGER</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Total purchase conversions in the period.</td>
+                </tr>
+
+                <tr>
+                    <td>total_leads</td>
+                    <td>INTEGER</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Total lead conversions in the period.</td>
+                </tr>
+
+                <tr>
+                    <td>total_registrations</td>
+                    <td>INTEGER</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Total registration conversions in the period.</td>
+                </tr>
+
+                <tr>
+                    <td>total_conversion_value</td>
+                    <td>FLOAT</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Total monetary value from conversions in the period.</td>
+                </tr>
+
+                <tr>
+                    <td>roas</td>
+                    <td>FLOAT</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>ROAS for the period.</td>
+                </tr>
+
+                <tr>
+                    <td>cpc</td>
+                    <td>FLOAT</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>CPC for the period.</td>
+                </tr>
+
+                <tr>
+                    <td>cpm</td>
+                    <td>FLOAT</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>CPM for the period.</td>
+                </tr>
+
+                <tr>
+                    <td>ctr</td>
+                    <td>FLOAT</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>CTR for the period.</td>
+                </tr>
+
+                <tr>
+                    <td>cpa_purchase</td>
+                    <td>FLOAT</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Cost Per Purchase for the period.</td>
+                </tr>
+
+                <tr>
+                    <td>cpa_lead</td>
+                    <td>FLOAT</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Cost Per Lead for the period.</td>
+                </tr>
+
+                <tr>
+                    <td>cpa_registration</td>
+                    <td>FLOAT</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Cost Per Registration for the period.</td>
+                </tr>
+
+                <tr>
+                    <td>frequency</td>
+                    <td>FLOAT</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Average frequency for the period.</td>
+                </tr>
+
+                <tr>
+                    <td>number_of_active_campaigns</td>
+                    <td>INTEGER</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Total active campaigns in the period.</td>
+                </tr>
+
+                <tr>
+                    <td>number_of_active_adsets</td>
+                    <td>INTEGER</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Total active ad sets in the period.</td>
+                </tr>
+
+                <tr>
+                    <td>number_of_active_ads</td>
+                    <td>INTEGER</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Total active ads in the period.</td>
+                </tr>
+
+                <tr>
+                    <td>top_roas_campaign_name</td>
+                    <td>STRING</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Name of the campaign with the highest ROAS.</td>
+                </tr>
+
+                <tr>
+                    <td>top_roas_campaign_value</td>
+                    <td>FLOAT</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Highest ROAS value.</td>
+                </tr>
+
+                <tr>
+                    <td>lowest_cpl_campaign_name</td>
+                    <td>STRING</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Name of the campaign with the lowest CPL.</td>
+                </tr>
+
+                <tr>
+                    <td>lowest_cpl_campaign_value</td>
+                    <td>FLOAT</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Lowest CPL value.</td>
+                </tr>
+
+                <tr>
+                    <td>highest_ctr_campaign_name</td>
+                    <td>STRING</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Name of the campaign with the highest CTR.</td>
+                </tr>
+
+                <tr>
+                    <td>highest_ctr_campaign_value</td>
+                    <td>FLOAT</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Highest CTR value.</td>
+                </tr>
+
+                <tr>
+                    <td>last_updated</td>
+                    <td>TIMESTAMP</td>
+                    <td>NULLABLE</td>
+                    <td></td>
+                    <td>Timestamp of when the record was last updated.</td>
+                </tr>
+
+            </tbody>
+        </table>
+<p><strong>Source:</strong> Aggregated from v1_b2s_all_acquisition_production_report or the periodic summary tables for standard periods.</p><hr style='margin-top: 20px; margin-bottom: 40px; border: 0; border-top: 1px solid #ccc;'>
+    </div>
+</body>
+</html>
